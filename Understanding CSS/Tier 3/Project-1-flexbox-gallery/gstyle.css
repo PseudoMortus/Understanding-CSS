@@ -1,10 +1,59 @@
+/* Modifying the Body so everything inside is centered */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Make a Main Container to Stack everything in Properly, not fully open to space things better */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* Make a decent Header */
+header {
+  text-align: center;
+  font-size: 40px;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin: auto;
 }
 
 .gallery img {
   border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+/* Hover effect */
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+ 
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .gallery {
+    gap: 6px;
+  }
+ 
+  .gallery img {
+    max-width: 100%;
+  }
+}
+
+/* New Window Links */
+a {
+  target="_blank";
 }
